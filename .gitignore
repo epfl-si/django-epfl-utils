@@ -3,3 +3,5 @@
 .tox/
 dist/
 .idea/
+.coverage
+
