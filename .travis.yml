@@ -1,0 +1,13 @@
+# .travis.yml
+language: python
+python: 2.7
+env:
+  matrix:
+  - TOXENV=py27-dj18
+  - TOXENV=py27-dj19
+  - TOXENV=py27-dj1110
+install:
+- pip install tox codecov
+script: tox -v
+after_success:
+- codecov
