@@ -2,6 +2,13 @@
 Django-epfl-utils
 ==================
 
+.. image:: https://travis-ci.org/GregLeBarbar/django-epfl-utils.svg?branch=master
+    :target: https://travis-ci.org/GregLeBarbar/django-epfl-utils
+
+.. image:: https://coveralls.io/repos/github/GregLeBarbar/django-epfl-utils/badge.svg?branch=master
+    :target: https://coveralls.io/github/GregLeBarbar/django-epfl-utils?branch=master
+
+
 Django-epfl-utils is a simple Django app to provide tools common to several 
 applications at EPFL.
 
