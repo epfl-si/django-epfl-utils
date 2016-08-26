@@ -4,7 +4,7 @@ import django.utils.translation
 
 class LabelModel(models.Model):
     """ Model for French and english label """
-    
+
     fr_label = models.CharField(
         max_length=100)
 

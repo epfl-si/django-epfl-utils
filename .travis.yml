@@ -7,7 +7,15 @@ env:
   - TOXENV=py27-dj19
   - TOXENV=py27-dj110
 install:
-- pip install tox codecov
-script: tox -v
+  - "pip install -r requirements.txt"
+script:
+  - tox -v
+  - coverage run --source='.' example/manage.py test
+  - flake8 epfl-utils
 after_success:
-- codecov
+  - coveralls
+notifications:
+  - recipients:
+    - gregory.charmier@gmail.com
+  - on_success: change
+  - on_failure: change
