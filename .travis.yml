@@ -5,7 +5,7 @@ env:
   matrix:
   - TOXENV=py27-dj18
   - TOXENV=py27-dj19
-  - TOXENV=py27-dj1110
+  - TOXENV=py27-dj110
 install:
 - pip install tox codecov
 script: tox -v
