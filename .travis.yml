@@ -11,7 +11,7 @@ install:
 script:
   - tox -v
   - coverage run --source='.' example/manage.py test
-  - flake8 epfl-utils
+  - flake8 epflutils
 after_success:
   - coveralls
 notifications:
