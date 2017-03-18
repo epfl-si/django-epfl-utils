@@ -14,26 +14,23 @@ def switch_language_and_redirect(request, url, lang):
 
 def check(request):
     """
-    SLB monitors this function to know if it can use this server
-    If the function returns HTTP 200, the server can be used by SLB
+    Cette méthode permet au SLB de vérifier si le serveur peut être utilisé.
+
+    Si la méthode retourne HTTP 200 le noeud est utilisé par le SLB
+    Si la méthode retourne HTTP 500 le noeud ne peut pas être utilisé.
     """
 
     slb = True
 
     if slb:
+
         from django.db import connection
-        cursor = connection.cursor()
-
-        cursor.execute("show tables")
-        tables = cursor.fetchall()
-
-        status = 200
-
-        cursor.execute("check table " + ','.join(t[0] for t in tables))
-        for result in cursor.fetchall():
-            if result[2].lower() == 'error':
-                status = 500
-                break
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("show tables")
+            status = 200
+        except:
+            status = 500
 
     else:
         status = 500

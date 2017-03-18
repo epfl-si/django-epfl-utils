@@ -1,8 +1,9 @@
 from django.test import TestCase
+
 from example.exampleapp.models import NoAbstractLabelModel
 
 
-class LabelModelTestCase(TestCase):
+class TestLabelModelTestCase(TestCase):
 
     def setUp(self):
 

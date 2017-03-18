@@ -4,4 +4,4 @@
 dist/
 .idea/
 .coverage
-
+example/db.sqlite3
